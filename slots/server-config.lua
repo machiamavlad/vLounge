@@ -37,6 +37,19 @@ Config.GambleMaxWinnings = 15
 --- @type number
 Config.TargetRTP = 0.90
 
+--- Configuration for available slot machine positions
+--- @class PositionConfig
+--- @field position vector3 The 3D coordinates of the slot machine
+--- @field openRadius number The radius within which a player can interact with the machine
+Config.Positions = {
+    -- {
+    --     position = vec3(334.45950317383,-1382.2785644531,32.509174346924),
+    --     openRadius = 1.0
+    -- }
+}
+
+Config.Lang = Languages[Language]
+
 --- WIN LINE CONFIGURATION SYSTEM ---
 --[[ 
     You can define different win line layouts using the Config.Lines table.
@@ -291,24 +304,6 @@ Config.JackpotTable = {
         [15] = {prize = "melonSlot", location = 15}
     }
 }
-
---- Configuration for available slot machine positions
---- @class PositionConfig
---- @field position vector3 The 3D coordinates of the slot machine
---- @field openRadius number The radius within which a player can interact with the machine
-Config.Positions = {
-    {
-        position = vec3(584.06481933594,-866.49896240234,41.143444061279),
-        openRadius = 1.0
-    },
-
-    {
-        position = vec3(334.45950317383,-1382.2785644531,32.509174346924),
-        openRadius = 1.0
-    }
-}
-
-Config.Lang = Languages[Language]
 
 --[[ 
     These messages are intentionally shown only when suspicious behavior is detected, 

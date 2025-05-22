@@ -46,6 +46,11 @@ Citizen.CreateThread(function()
         if i > 16 then return end
     end
 
+    if next(SlotMachines) == nil then
+        print("^1vSlots:^0 You don't have any slot machine location configured, check ^3(server/config.lua -> Config.Positions)^0.")
+        return
+    end
+
     print("^2vSlots:^0", "Successfully loaded ^2" .. #SlotMachines .. " slot machines^0.")
 
     while true do

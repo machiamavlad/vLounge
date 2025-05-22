@@ -11,7 +11,7 @@ serverData = {
     paid = 0
 }
 
--- Framework Functions (vRP/QB-Core/ESX)
+-- Framework Functions
 if Config.Framework == "vRP" then
     Tunnel, Proxy = module("vrp", "lib/Tunnel"), module("vrp", "lib/Proxy")
     vRP, vRPclient = Proxy.getInterface("vRP"), Tunnel.getInterface("vRP", "Slots")
@@ -207,7 +207,46 @@ elseif Config.Framework == "QBox" then
 
         Player.Functions.AddMoney("cash", amount, "slotmachine_win")
     end
+elseif Config.Framework == "Standalone" then
+    local playerBalances = {}
+    local adminList = {
+        ["license:yourlicensehere"] = true,
+        ["steam:110000123456789"] = true
+    }
+
+    function GetUserId(player)
+        return player
+    end
+
+    function isAdmin(player)
+        local identifiers = GetPlayerIdentifiers(player)
+        for _, id in pairs(identifiers) do
+            if adminList[id] then return true end
+        end
+
+        return false
+    end
+
+    function CheckConditions(player)
+        -- Your Code
+        return true
+    end
+
+    function GetMoney(player)
+        -- Your Code
+        return 0
+    end
+
+    function TryPayment(player, amount)
+        -- Your Code
+        return true
+    end
+
+    function GiveMoney(player, amount)
+        -- Your Code
+    end
 end
+
 
 function Notify(player, text, tType)
     TriggerClientEvent("machiamavlad:slotNotification", player, text, tType)
