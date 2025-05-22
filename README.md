@@ -1,5 +1,5 @@
 # After **4 years of development and refinement**, **vLounge** has become a trusted resource for high-quality FiveM systems — focused on reliability, scalability, and user experience.
-> 
+> - *[🌟 Check out our store now](https://vlounge-store.tebex.io/)*
 > ---
 > 
 > # __:wrench: **Why choose vLounge?**__
