@@ -1,4 +1,4 @@
-# vLounge Store
+# vLounge Development
 > 
 > ---
 > 
